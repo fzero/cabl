@@ -46,7 +46,7 @@ namespace py
 
 //--------------------------------------------------------------------------------------------------
 /*
-static object drawingContext_load(DrawingContext& self) {
+  static object drawingContext_load(DrawingContext& self) {
   unsigned char* buffer;
   int size;
   self.load(buffer, size);
@@ -84,10 +84,6 @@ public:
 static void writeToDisplay(Canvas& self_, object buffer)
 {
   PyObject* pyBuffer = buffer.ptr();
-  if (!PyBuffer_Check(pyBuffer))
-  {
-    // raise TypeError using standard boost::python mechanisms
-  }
   PyObject* pobj = buffer.ptr();
   Py_buffer pybuf;
   PyObject_GetBuffer(pobj, &pybuf, PyBUF_SIMPLE);
